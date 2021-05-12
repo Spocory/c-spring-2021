@@ -12,40 +12,30 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Microsoft.EntityFrameworkCore;
+using ZipCode;
 
-namespace HelloWorld
+
+namespace ZipCode
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Models.User user = new Models.User();
-
+        private Models.Zipcode zip = new Models.Zipcode();
         public MainWindow()
         {
             InitializeComponent();
-            uxContainer.DataContext = user;
+            uxContainer.DataContext = zip;
+       
 
-            var sample = new SampleContext();
-            sample.User.Load();
-            var users = sample.User.Local.ToObservableCollection();
-            uxList.ItemsSource = users;
         }
 
         private void uxSubmit_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Submitting password:" + uxPassword.Text);
-
-            var window = new SecondWindow();
-            Application.Current.MainWindow = window;
-            Close();
-            window.Show();
-        }
-
-        private void uxSubmit_TextInput(object sender, TextCompositionEventArgs e)
-        {
+            
+            MessageBox.Show("Submitting Zip:" + uxZip.Text);
+            
 
         }
     }

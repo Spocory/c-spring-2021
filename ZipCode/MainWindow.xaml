@@ -1,0 +1,21 @@
+﻿<Window x:Class="ZipCode.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZipCode" xmlns:models="clr-namespace:ZipCode.Models" d:DataContext="{d:DesignInstance Type=models:Zipcode}"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    
+    <StackPanel  x:Name="uxContainer">
+        <TextBlock>Enter Zip:</TextBlock>
+        <TextBox x:Name="uxZip" 
+        Text="{Binding Zip, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}">
+        </TextBox>
+
+        <Label x:Name="uxZipError" 
+        Content="{Binding ZipError, UpdateSourceTrigger=PropertyChanged}"></Label>
+
+        <Button x:Name="uxSubmit" Click="uxSubmit_Click" IsEnabled="{Binding Path=ButtonEnabled,UpdateSourceTrigger=PropertyChanged}"  >Submit</Button>
+    </StackPanel>
+</Window>
