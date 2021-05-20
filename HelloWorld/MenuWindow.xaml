@@ -34,7 +34,25 @@
             <MenuItem Header="_Edit"/>
             <MenuItem Header="_Help"/>
         </Menu>
-
+        <ToolBarTray>
+            <ToolBar>
+                <Button Command="New" Content="New" Click="OnNew_Click"/>
+                <Button Content="Copy"/>
+                <Button Content="Paste"/>
+            </ToolBar>
+            <ToolBar>
+                <Label>Font size:</Label>
+                <ComboBox>
+                    <ComboBoxItem>10</ComboBoxItem>
+                    <ComboBoxItem IsSelected="True">12</ComboBoxItem>
+                    <ComboBoxItem>14</ComboBoxItem>
+                    <ComboBoxItem>16</ComboBoxItem>
+                </ComboBox>
+            </ToolBar>
+            <ToolBar>
+                <Button x:Name ="uxClose" Content="Exit" Click="OnClose_Click"/>
+            </ToolBar>
+        </ToolBarTray>
 
 
     </StackPanel>

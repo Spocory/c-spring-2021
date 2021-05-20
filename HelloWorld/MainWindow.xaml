@@ -42,9 +42,6 @@
                         <DataTrigger Binding="{Binding Text.Length, ElementName=uxName, UpdateSourceTrigger=PropertyChanged}" Value="0">
                             <Setter Property="IsEnabled" Value="False"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding Text.Length, ElementName=uxPassword, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                            <Setter Property="IsEnabled" Value="False"/>
-                        </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>

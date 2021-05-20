@@ -1,0 +1,24 @@
+﻿<Window x:Class="HelloWorld.StatusWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HelloWorld"
+        mc:Ignorable="d"
+        Title="StatusWindow" Height="450" Width="800">
+    <DockPanel>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem>
+                <TextBlock x:Name="uxStatus"></TextBlock>
+            </StatusBarItem>
+            <Separator />
+            <StatusBarItem>
+                <ProgressBar x:Name="uxProgressBar" Value="50" Width="40" Height="16"></ProgressBar>
+            </StatusBarItem>
+            <StatusBarItem>
+                <TextBlock x:Name="uxPercent"></TextBlock>
+            </StatusBarItem>
+        </StatusBar>
+        <TextBox x:Name="uxTextEditor" MaxLength="40" AcceptsReturn="true" SelectionChanged="uxTextEditor_SelectionChanged"></TextBox>
+    </DockPanel>
+</Window>
